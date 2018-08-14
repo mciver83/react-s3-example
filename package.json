@@ -1,0 +1,41 @@
+{
+  "name": "photos",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "massive": "^5.2.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-s3-uploader": "^4.8.0",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "server/server.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "nodemonConfig": {
+    "ext": "js,sql",
+    "ignore": ["src/*", "public/*"]
+  },
+  "proxy": {
+    "/s3": {
+      "target": "http://localhost:5009"
+    },
+    "/api/*": {
+      "target": "http://localhost:5009"
+    }
+  }
+}
